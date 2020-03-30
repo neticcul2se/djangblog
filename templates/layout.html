@@ -28,12 +28,22 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="createForm1">แบบฟอร์ม <span class="sr-only">(current)</span></a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="">Hello  {{ user.first_name }} <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="logout">Logout <span class="sr-only">(current)</span></a>
+                </li>
+                {% else %}
                 <li class="nav-item active">
                     <a class="nav-link" href="fmregister">ลงทะเบียน <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="login">เข้าสู่ระบบ <span class="sr-only">(current)</span></a>
                 </li>
+                {% endif %}
+
 
 
             </ul>

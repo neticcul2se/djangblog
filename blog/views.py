@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Post
-from django.contrib.auth.models import User,auth
+from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
 # Create your views here.
@@ -31,14 +31,19 @@ def loginform(request):
     return render(request, 'login.html')
 
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
+
 def logincheck(request):
     username = request.POST['username']
     password = request.POST['password']
-    user=auth.authenticate(username=username,password=password)
+    user = auth.authenticate(username=username, password=password)
     if user is not None:
-        auth.login(request,user)
+        auth.login(request, user)
         return redirect('/')
-    else :
+    else:
         messages.info(request, 'ไม่พบข้อมูล')
         return redirect('/login')
 
