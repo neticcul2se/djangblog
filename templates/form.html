@@ -1,6 +1,9 @@
 {% extends 'layout.html' %} {% block content %}
 <h1 align="center">แบบฟอร์มสร้างข้อมูล</h1>
-<form>
+
+<form action="addform" method="POST">
+    {% csrf_token %}
+    <div class="row"></div>
     <div class="form-group">
         <label for="title">ชื่อบทความ</label>
         <input type="text" class="form-control" id="title" name="name">
@@ -9,7 +12,11 @@
         <label for="des">รายละเอียด</label>
         <textarea class="form-control" id="des" rows="3" name="des"></textarea>
     </div>
+    <div class="text-center mb-3">
 
-    <button type="submit" class="btn btn-primary">บันทึกบทความ</button>
+        <button type="submit" class="btn btn-primary  pull-right">บันทึกบทความ</button>
+    </div>
+    </div>
 </form>
-{%endblock%}
+
+{% endblock %}

@@ -19,7 +19,13 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.Hello, name='hello'),
-    path('page1/', views.page1, name='page1'),
-path('createForm/', views.createForm, name='createForm'),
+    path('', views.Hello),
+    path('page1', views.page1),
+    path('createForm1', views.createForm),
+    path('addform', views.addBlog),
+    path('fmregister', views.fmregister),
+    path('register1', views.register1),
+    path('login', views.loginform),
+    path('logincheck', views.logincheck),
+
 ]

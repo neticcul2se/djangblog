@@ -1,0 +1,43 @@
+{% extends 'layout.html' %} {% block content %}
+<h1 align="center">ลงทะเบียน</h1>
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+    {% for ms in messages %} {{ms}} {% endfor%}
+</div>
+{% endif %}
+<form action="register1
+" method="POST">
+    {% csrf_token %}
+    <div class="row"></div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="title" name="username">
+    </div>
+    <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" id="title" name="firstname">
+    </div>
+    <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" id="title" name="lastname">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="firstname" class="form-control" id="title" name="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="title" name="password">
+    </div>
+    <div class="form-group">
+        <label for="repassword">Re-Password </label>
+        <input type="password" class="form-control" id="title" name="repassword">
+    </div>
+    <div class="text-center mb-3">
+
+        <button type="submit" class="btn btn-primary  pull-right">ลงทะเบียน</button>
+    </div>
+    </div>
+</form>
+
+{% endblock %}
