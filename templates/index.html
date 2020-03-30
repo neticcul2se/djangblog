@@ -1,0 +1,17 @@
+ {% extends 'layout.html' %} {% block content %}
+<h1>ท่องเที่ยวภาคเหนือ</h1>
+<p>ชื่อเรื่อง {{ name }}</p>
+<p>ผู้แต่ง {{ author }}</p>
+ป้ายกำกับ
+<ul> {% for tag in tags %}
+    <li>
+        <p> {{ tag }}</p>
+    </li>
+    {% endfor %}
+</ul>
+<h2>ความนิยม</h2>
+{% if rating > 3 %}
+<h3>ได้รับความนิยม</h3>
+{% else %}
+<h3>ไม่ได้รับความนิยม</h3>
+{% endif %} {%endblock%}
